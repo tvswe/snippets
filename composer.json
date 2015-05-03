@@ -1,0 +1,19 @@
+{
+    "name": "tvswe/snippets",
+    "type": "library",
+    "description": "Snippets",
+    "keywords": [
+        "snippets"
+    ],
+    "homepage": "http://tvswe.eu/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tino Vogel",
+            "email": "tv.swe@gmx.de"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2"
+    }
+}
