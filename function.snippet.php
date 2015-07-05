@@ -10,15 +10,16 @@
  */
 function smarty_function_snippet($params, Smarty_Internal_Template $template)
 {
-    $snippetName = '';
+    $snippetArray = [];
     
     foreach($params as $key => $param) {
-        $snippetName .= ucfirst($key) . ucfirst($param);
+        $snippetArray[] = "$key/$param";
     }
     
-    $snippetName = lcfirst($snippetName);
+    $snippetName = implode('/', $snippetArray);
     
-    $snippet = $template->getConfigVariable($snippetName);
+    $CI =& get_instance();
+    $snippet = $CI->lang->line($snippetName);
     
-    return $snippet ? $snippet : '#' . $snippetName . '#';
+    return $snippet ?: "{$snippetName}";
 }
